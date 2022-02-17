@@ -10,12 +10,16 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     private Integer numHits;
     private SharedPreferences myPrefs;
+    private Switch clockMode;
+    private boolean clockModeIsChecked;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,18 +29,40 @@ public class MainActivity extends AppCompatActivity {
         Context context = getApplicationContext(); // app level storage
         myPrefs = PreferenceManager.getDefaultSharedPreferences(context);
 
-        SharedPreferences.Editor peditor = myPrefs.edit();
-        peditor.putInt("hitsValue", -1);
-        peditor.apply();
+        clockMode = (Switch) findViewById(R.id.clock_switch);
+        clockMode.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    // 24 hr mode
+                    Log.d("onCreate", "24 hr mode!");
+                } else {
+                    // 12 hr mode
+                    Log.d("onCreate", "12 hr mode!");
+                }
+                clockModeIsChecked = isChecked;
+                Log.d("onCheckedChange", Boolean.toString(clockModeIsChecked));
+            }
+        });
+
+        Log.d("onCreate", "i'm creating");
+
+//        SharedPreferences.Editor peditor = myPrefs.edit();
+//        peditor.putBoolean("clockModeIsChecked", clockModeIsChecked);
+//        peditor.apply();
     }
 
     @Override
     protected void onStart() {
         super.onStart();
 
-        numHits = myPrefs.getInt("hitsValue", 0);
-        TextView hits = (TextView) findViewById(R.id.hits_value);
-        hits.setText(numHits.toString());
+        // get from bundle
+        clockModeIsChecked = myPrefs.getBoolean("clockModeIsChecked", true);
+        Log.d("onStart", Boolean.toString(clockModeIsChecked));
+        clockMode.setChecked(clockModeIsChecked);
+//        numHits = myPrefs.getInt("hitsValue", 0);
+//        TextView hits = (TextView) findViewById(R.id.hits_value);
+//        hits.setText(numHits.toString());
     }
 
     @Override
@@ -48,7 +74,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
 
         SharedPreferences.Editor peditor = myPrefs.edit();
-        peditor.putInt("hitsValue", numHits);
+        peditor.putBoolean("clockModeIsChecked", clockModeIsChecked);
+        // peditor.putInt("hitsValue", numHits);
         peditor.apply();
 
         super.onPause();
@@ -59,7 +86,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onStop() {
 
         SharedPreferences.Editor peditor = myPrefs.edit();
-        peditor.putInt("hitsValue", 10);
+        peditor.putBoolean("clockModeIsChecked", clockModeIsChecked);
+        // peditor.putInt("hitsValue", 10);
         peditor.apply();
 
         super.onStop();
@@ -94,11 +122,15 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    /** Called when the user clicks the HITME button */
-    public void hitme(View view) {
+    public void calculate(View view) {
         // Do something in response to button
+        Intent intent = new Intent(MainActivity.this, CalculateActivity.class);
+        startActivity(intent);
+    }
 
-        Intent intent = new Intent(MainActivity.this, HitsActivity.class);
+    public void learn(View view) {
+        // Do something in response to button
+        Intent intent = new Intent(MainActivity.this, LearnActivity.class);
         startActivity(intent);
     }
 }
