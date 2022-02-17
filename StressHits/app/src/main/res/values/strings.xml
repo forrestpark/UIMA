@@ -11,6 +11,7 @@
     <string name="hits_msg">#hits:</string>
     <string name="title_activity_hits">HitsActivity</string>
     <string name="title_activity_calculate">CalculateActivity</string>
+    <string name="default_num">00</string>
     <string name="colon">:</string>
     <string name="start">start</string>
     <string name="end">end</string>

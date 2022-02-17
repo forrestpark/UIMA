@@ -6,27 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".CalculateActivity">
 
-    <TextView
-        android:id="@+id/diffText"
-        android:layout_width="128dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="96dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <EditText
-        android:id="@+id/diffHour"
+        android:id="@+id/startHour"
         android:layout_width="48dp"
         android:layout_height="48dp"
+        android:layout_marginTop="96dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="96dp"
         android:ems="10"
+        android:gravity="center"
         android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/diffColon" />
+        android:text="@string/default_num"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/startColon"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/diffColon"
@@ -35,22 +28,12 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="96dp"
         android:layout_weight="1"
-        android:text="TextView"
+        android:gravity="center"
+        android:text="@string/colon"
+        android:textAlignment="center"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/diffMin" />
-
-    <EditText
-        android:id="@+id/diffMin"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="96dp"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/endText"
@@ -58,9 +41,67 @@
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="48dp"
-        android:text="TextView"
+        android:gravity="center"
+        android:text="@string/end"
+        android:textAlignment="center"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/startText" />
+
+    <EditText
+        android:id="@+id/endHour"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="@string/default_num"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/endColon"
+        app:layout_constraintTop_toBottomOf="@+id/startHour" />
+
+    <TextView
+        android:id="@+id/diffText"
+        android:layout_width="128dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="96dp"
+        android:gravity="center"
+        android:text="@string/diff"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/startColon"
+        android:layout_width="8dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="16dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/colon"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/startMin"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/startText"
+        android:layout_width="128dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="96dp"
+        android:gravity="center"
+        android:text="@string/start"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/endMin"
@@ -70,44 +111,27 @@
         android:layout_marginEnd="16dp"
         android:layout_weight="1"
         android:ems="10"
+        android:gravity="center"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="@string/default_num"
+        android:textAlignment="center"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/startMin" />
 
-    <EditText
-        android:id="@+id/endHour"
-        android:layout_width="48dp"
+    <TextView
+        android:id="@+id/endColon"
+        android:layout_width="8dp"
         android:layout_height="48dp"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintEnd_toStartOf="@+id/endColon"
-        app:layout_constraintTop_toBottomOf="@+id/startHour" />
-
-    <TextView
-        android:id="@+id/startText"
-        android:layout_width="128dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="96dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/startHour"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintEnd_toStartOf="@+id/startColon"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/colon"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/endMin"
+        app:layout_constraintTop_toBottomOf="@+id/startColon" />
 
     <EditText
         android:id="@+id/startMin"
@@ -117,31 +141,43 @@
         android:layout_marginEnd="16dp"
         android:layout_weight="1"
         android:ems="10"
+        android:gravity="center"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="@string/default_num"
+        android:textAlignment="center"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/startColon"
-        android:layout_width="8dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="16dp"
-        android:layout_weight="1"
-        android:text="TextView"
-        app:layout_constraintEnd_toStartOf="@+id/startMin"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="149dp"
+        android:layout_height="219dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.585"
+        app:srcCompat="@drawable/hourglass" />
 
     <TextView
-        android:id="@+id/endColon"
-        android:layout_width="8dp"
+        android:id="@+id/diffMin"
+        android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_marginTop="48dp"
         android:layout_marginEnd="16dp"
-        android:layout_weight="1"
-        android:text="TextView"
-        app:layout_constraintEnd_toStartOf="@+id/endMin"
-        app:layout_constraintTop_toBottomOf="@+id/startColon" />
+        android:layout_marginBottom="96dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/diffHour"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="96dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/diffColon" />
 
 </android.support.constraint.ConstraintLayout>
