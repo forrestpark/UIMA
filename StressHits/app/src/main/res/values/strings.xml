@@ -16,4 +16,5 @@
     <string name="start">start</string>
     <string name="end">end</string>
     <string name="diff">diff</string>
+    <string name="calculateButtonDescription">calculates difference between start and end time</string>
 </resources>

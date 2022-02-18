@@ -14,12 +14,14 @@
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:gravity="center"
+        android:hint="@string/default_num"
         android:inputType="textPersonName"
-        android:text="@string/default_num"
         android:textAlignment="center"
+        android:textColorHint="#78909C"
         android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@+id/startColon"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/diffColon"
@@ -56,12 +58,14 @@
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:gravity="center"
+        android:hint="@string/default_num"
         android:inputType="textPersonName"
-        android:text="@string/default_num"
         android:textAlignment="center"
+        android:textColorHint="#78909C"
         android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@+id/endColon"
-        app:layout_constraintTop_toBottomOf="@+id/startHour" />
+        app:layout_constraintTop_toBottomOf="@+id/startHour"
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/diffText"
@@ -112,12 +116,14 @@
         android:layout_weight="1"
         android:ems="10"
         android:gravity="center"
+        android:hint="@string/default_num"
         android:inputType="textPersonName"
-        android:text="@string/default_num"
         android:textAlignment="center"
+        android:textColorHint="#78909C"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/startMin" />
+        app:layout_constraintTop_toBottomOf="@+id/startMin"
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/endColon"
@@ -142,17 +148,20 @@
         android:layout_weight="1"
         android:ems="10"
         android:gravity="center"
+        android:hint="@string/default_num"
         android:inputType="textPersonName"
-        android:text="@string/default_num"
         android:textAlignment="center"
+        android:textColorHint="#78909C"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:importantForAutofill="no" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/calculateButton"
         android:layout_width="149dp"
         android:layout_height="219dp"
+        android:contentDescription="@string/calculateButtonDescription"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
