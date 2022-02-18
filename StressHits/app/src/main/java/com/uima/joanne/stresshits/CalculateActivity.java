@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Locale;
+
 public class CalculateActivity extends AppCompatActivity {
 
     private int startHour, startMin, endHour, endMin, diffHour, diffMin;
@@ -22,6 +24,31 @@ public class CalculateActivity extends AppCompatActivity {
 
     public void onButtonClick(View view) {
         Log.d("onButtonClick", "pressed!");
+
+        if (areLegalTimes()) {
+            // calculate time diff
+            Log.d("onButtonClick", "legal!");
+            int[] result = calculateDifference(startHour, startMin, endHour, endMin);
+
+            TextView diffHour = (TextView) findViewById(R.id.diffHour);
+            diffHour.setText(String.format(Locale.ENGLISH,"%02d", result[0]));
+
+            TextView diffMin = (TextView) findViewById(R.id.diffMin);
+            diffMin.setText(String.format(Locale.ENGLISH, "%02d", result[1]));
+            //set difference
+        } else {
+            // toast!
+            Log.d("onButtonClick", "illegal!");
+            Context context = getApplicationContext();
+            CharSequence text = "Enter legal times! 0-23 for hours, 0-59 for minutes";
+            int duration = Toast.LENGTH_SHORT;
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
+        }
+    }
+
+    private boolean areLegalTimes() {
+        boolean ret = true;
         EditText editStartHour = (EditText) findViewById(R.id.startHour);
         startHour = Integer.parseInt(editStartHour.getText().toString());
         EditText editStartMin = (EditText) findViewById(R.id.startMin);
@@ -31,27 +58,23 @@ public class CalculateActivity extends AppCompatActivity {
         EditText editEndMin = (EditText) findViewById(R.id.endMin);
         endMin = Integer.parseInt(editEndMin.getText().toString());
 
-        if (isLegalHour(startHour) && isLegalMin(startMin) &&
-            isLegalHour(endHour) && isLegalMin(endMin)) {
-            // calculate time diff
-            Log.d("onButtonClick", "legal!");
-            int[] result = calculateDifference(startHour, startMin, endHour, endMin);
-
-            TextView diffHour = (TextView) findViewById(R.id.diffHour);
-            diffHour.setText(String.format("%02d", result[0]));
-
-            TextView diffMin = (TextView) findViewById(R.id.diffMin);
-            diffMin.setText(String.format("%02d", result[1]));
-            //set difference
-        } else {
-            // toast!
-            Log.d("onButtonClick", "illegal!");
-            Context context = getApplicationContext();
-            CharSequence text = "Hello toast!";
-            int duration = Toast.LENGTH_SHORT;
-            Toast toast = Toast.makeText(context, text, duration);
-            toast.show();
+        if (!isLegalHour(startHour)) {
+            editStartHour.setText(R.string.default_num);
+            ret = false;
         }
+        if (!isLegalMin(startMin)) {
+            editStartMin.setText(R.string.default_num);
+            ret = false;
+        }
+        if (!isLegalHour(endHour)) {
+            editEndHour.setText(R.string.default_num);
+            ret = false;
+        }
+        if (!isLegalMin(endMin)) {
+            editEndMin.setText(R.string.default_num);
+            ret = false;
+        }
+        return ret;
     }
 
     private int[] calculateDifference(int startHour, int startMin, int endHour, int endMin) {
