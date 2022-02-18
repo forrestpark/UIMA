@@ -1,37 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/appName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/app_name" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center|top"
+    android:isScrollContainer="false"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
     <Button
-        android:layout_width="wrap_content"
+        android:id="@+id/toCalculate"
+        android:layout_width="192dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="192dp"
         android:onClick="calculate"
-        android:text="@string/btn_calculate" />
+        android:text="@string/btn_calculate"
+        android:textSize="24sp" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:id="@+id/toLearn"
+        android:layout_width="192dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:freezesText="false"
+        android:gravity="center"
         android:onClick="learn"
-        android:text="@string/btn_learn" />
+        android:text="@string/btn_learn"
+        android:textSize="24sp" />
 
     <Switch
         android:id="@+id/clock_switch"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:text="@string/clock_switch" />
+        android:layout_width="256dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="128dp"
+        android:text="@string/clock_switch"
+        android:textSize="24sp" />
 
 </LinearLayout>

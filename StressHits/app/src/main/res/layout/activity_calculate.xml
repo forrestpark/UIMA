@@ -59,13 +59,13 @@
         android:ems="10"
         android:gravity="center"
         android:hint="@string/default_num"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:textAlignment="center"
         android:textColorHint="#78909C"
         android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@+id/endColon"
-        app:layout_constraintTop_toBottomOf="@+id/startHour"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/startHour" />
 
     <TextView
         android:id="@+id/diffText"
@@ -159,14 +159,16 @@
 
     <ImageButton
         android:id="@+id/calculateButton"
-        android:layout_width="149dp"
-        android:layout_height="219dp"
+        android:layout_width="120dp"
+        android:layout_height="184dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginBottom="64dp"
         android:contentDescription="@string/calculateButtonDescription"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:onClick="onButtonClick"
+        app:layout_constraintBottom_toTopOf="@+id/diffHour"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.585"
+        app:layout_constraintTop_toBottomOf="@+id/endHour"
         app:srcCompat="@drawable/hourglass" />
 
     <TextView
@@ -176,6 +178,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="96dp"
         android:textAlignment="center"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -186,6 +189,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="96dp"
         android:textAlignment="center"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/diffColon" />
 

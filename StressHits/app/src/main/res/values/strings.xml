@@ -5,7 +5,7 @@
     <string name="edit_message">Enter Name</string>
     <string name="btn_calculate">CALCULATE</string>
     <string name="btn_learn">LEARN</string>
-    <string name="clock_switch">Clock Mode</string>
+    <string name="clock_switch">24hr mode</string>
     <string name="btn_sm">little hit</string>
     <string name="btn_lg">BIG HIT</string>
     <string name="hits_msg">#hits:</string>
