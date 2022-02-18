@@ -2,6 +2,7 @@ package com.uima.joanne.stresshits;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import java.util.Random;
 
@@ -23,6 +24,7 @@ public class LearnActivity extends AppCompatActivity {
         setContentView(R.layout.activity_learn);
 
         setRandomTime();
+        setTimeTextView();
 
     }
 
@@ -51,6 +53,13 @@ public class LearnActivity extends AppCompatActivity {
         } else {
             answer = "MEDIUM";
         }
+
+
+    }
+
+    private void setTimeTextView() {
+        TextView start_hour_view = (TextView) findViewById(R.id.learn_start_time);
+        start_hour_view.setText(String.format("%02d", start_hour));
     }
 
     private int[] calculateDifference(int startHour, int startMin, int endHour, int endMin) {
