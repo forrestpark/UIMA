@@ -20,8 +20,8 @@
         android:id="@+id/learn_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="83dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="32dp"
         android:text="start"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/learn_start_time" />
@@ -40,8 +40,8 @@
         android:id="@+id/learn_end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="78dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="84dp"
         android:text="end"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/learn_end_time" />
@@ -51,6 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="117dp"
+        android:onClick="onClickCheck"
         android:text="Check"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,6 +59,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
+        android:id="@+id/three_buttons"
         android:layout_width="0dp"
         android:layout_height="179dp"
         android:layout_marginBottom="252dp"
@@ -72,6 +74,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="onClickSmall"
             app:srcCompat="@drawable/hourglass_small" />
 
         <ImageButton
@@ -79,6 +82,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="onClickMedium"
             app:srcCompat="@drawable/hourglass_medium" />
 
         <ImageButton
@@ -86,6 +90,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="onClickLarge"
             app:srcCompat="@drawable/hourglass_large" />
     </LinearLayout>
 
@@ -93,17 +98,77 @@
         android:id="@+id/learn_retry"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
         android:layout_marginBottom="117dp"
+        android:onClick="onClickRetry"
         android:text="Retry"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="40dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/learn_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="36dp"
         android:layout_marginBottom="117dp"
+        android:onClick="onClickNext"
         android:text="NEXT"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="269dp" />
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/learnhard_hrs_edittext"
+        android:layout_width="100dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/learn_hard_hrs_text"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/learnhard_mins_edittext"
+        android:layout_width="100dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="53dp"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/learn_hard_mins_text"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/learn_hard_hrs_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginEnd="165dp"
+        android:layout_marginBottom="12dp"
+        android:text="hrs"
+        app:layout_constraintBottom_toTopOf="@+id/three_buttons"
+        app:layout_constraintEnd_toStartOf="@+id/learn_hard_mins_text"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="hrs" />
+
+    <TextView
+        android:id="@+id/learn_hard_mins_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="85dp"
+        android:layout_marginBottom="12dp"
+        android:text="mins"
+        app:layout_constraintBottom_toTopOf="@+id/three_buttons"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="mins" />
+
+    <TextView
+        android:id="@+id/learnhard_display"
+        android:layout_width="95dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="116dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>
