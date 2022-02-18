@@ -75,6 +75,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onClickSmall"
+            android:scaleType="centerCrop"
             app:srcCompat="@drawable/hourglass_small" />
 
         <ImageButton
@@ -83,6 +84,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:onClick="onClickMedium"
+            android:scaleType="centerCrop"
             app:srcCompat="@drawable/hourglass_medium" />
 
         <ImageButton
@@ -91,6 +93,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onClickLarge"
+            android:scaleType="centerCrop"
             app:srcCompat="@drawable/hourglass_large" />
     </LinearLayout>
 
