@@ -187,7 +187,7 @@
         android:layout_width="39dp"
         android:layout_height="39dp"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hg_layout"
         app:srcCompat="@android:drawable/ic_delete" />
@@ -197,7 +197,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hg_layout"
         app:srcCompat="@android:drawable/presence_online" />
@@ -206,7 +206,7 @@
         android:id="@+id/hg_medium_incorrect"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -217,8 +217,9 @@
         android:id="@+id/hg_medium_correct"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hg_layout"
         app:srcCompat="@android:drawable/presence_online" />
@@ -227,7 +228,7 @@
         android:id="@+id/hg_large_incorrect"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="44dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hg_layout"
@@ -237,10 +238,38 @@
         android:id="@+id/hg_large_correct"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="44dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hg_layout"
         app:srcCompat="@android:drawable/presence_online" />
+
+    <TextView
+        android:id="@+id/hg_small_text"
+        android:layout_width="66dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="34dp"
+        android:text="-8 hrs"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hg_layout" />
+
+    <TextView
+        android:id="@+id/hg_medium_text"
+        android:layout_width="66dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="1dp"
+        android:text="8-16 hrs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hg_layout" />
+
+    <TextView
+        android:id="@+id/hg_large_text"
+        android:layout_width="66dp"
+        android:layout_height="16dp"
+        android:layout_marginEnd="34dp"
+        android:text="16+ hrs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hg_layout" />
 
 </android.support.constraint.ConstraintLayout>
