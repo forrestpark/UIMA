@@ -284,12 +284,17 @@ public class LearnActivity extends AppCompatActivity {
 
         // if 24 hour mode
         if (clockModeIsChecked) {
+            Log.d("24 hour mode", "set time text view");
             start_time_view.setText(String.format("%02d:%02d", start_hour, start_minute));
             end_time_view.setText(String.format("%02d:%02d", end_hour, end_minute));
         } else {
+            Log.d("12 hr mode on", "set time text view");
+            Log.d("start/end hour:", String.valueOf(start_hour) + String.valueOf(end_hour));
             if (start_hour > 12) {
+                Log.d("huh?", "pm");
                 start_time_view.setText(String.format("%02d:%02d pm", start_hour % 12, start_minute));
             } else {
+                Log.d("huh?", "am");
                 start_time_view.setText(String.format("%02d:%02d am", start_hour, start_minute));
             }
 
