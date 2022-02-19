@@ -13,6 +13,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.Random;
 
 public class LearnActivity extends AppCompatActivity {
@@ -46,6 +48,9 @@ public class LearnActivity extends AppCompatActivity {
     private TextView hrs_text;
     private TextView mins_text;
     private TextView learnhard_display;
+    private TextView hg_small_text;
+    private TextView hg_medium_text;
+    private TextView hg_large_text;
     private EditText learnhard_hrs_edittext;
     private EditText learnhard_mins_edittext;
 
@@ -87,9 +92,31 @@ public class LearnActivity extends AppCompatActivity {
         hg_large_incorrect = (ImageView) findViewById(R.id.hg_large_incorrect);
         hg_large_correct = (ImageView) findViewById(R.id.hg_large_correct);
 
+        // hourglass textviews
+        hg_small_text = (TextView) findViewById(R.id.hg_small_text);
+        hg_medium_text = (TextView) findViewById(R.id.hg_medium_text);
+        hg_large_text = (TextView) findViewById(R.id.hg_large_text);
+
         // make all correct/incorrect images invisible at first
         setCorrectIncorrectToInvisible();
+        setHourglassTextVisible();
 
+    }
+
+    private void setHourglassTextVisible() {
+        hg_small_text = (TextView) findViewById(R.id.hg_small_text);
+        hg_medium_text = (TextView) findViewById(R.id.hg_medium_text);
+        hg_large_text = (TextView) findViewById(R.id.hg_large_text);
+
+        hg_small_text.setVisibility(View.VISIBLE);
+        hg_medium_text.setVisibility(View.VISIBLE);
+        hg_large_text.setVisibility(View.VISIBLE);
+    }
+
+    private void setHourglassTextInvisible() {
+        hg_small_text.setVisibility(View.INVISIBLE);
+        hg_medium_text.setVisibility(View.INVISIBLE);
+        hg_large_text.setVisibility(View.INVISIBLE);
     }
 
     private void setCorrectIncorrectToInvisible() {
@@ -229,6 +256,8 @@ public class LearnActivity extends AppCompatActivity {
         hg_small.setVisibility(View.GONE);
         hg_medium.setVisibility(View.GONE);
         hg_large.setVisibility(View.GONE);
+
+        setHourglassTextInvisible();
     }
 
     private void showLearnHard() {
