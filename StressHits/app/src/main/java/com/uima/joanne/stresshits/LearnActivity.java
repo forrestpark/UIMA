@@ -10,9 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import java.util.Random;
 
@@ -35,6 +34,13 @@ public class LearnActivity extends AppCompatActivity {
     private ImageButton hg_small;
     private ImageButton hg_medium;
     private ImageButton hg_large;
+
+    private ImageView hg_small_incorrect;
+    private ImageView hg_small_correct;
+    private ImageView hg_medium_incorrect;
+    private ImageView hg_medium_correct;
+    private ImageView hg_large_incorrect;
+    private ImageView hg_large_correct;
 
     // learn hard
     private TextView hrs_text;
@@ -72,6 +78,27 @@ public class LearnActivity extends AppCompatActivity {
         learn_next.setVisibility(View.INVISIBLE);
 
         learn_check = (Button) findViewById(R.id.learn_check);
+
+        // correct/incorrect image views
+        hg_small_incorrect = (ImageView) findViewById(R.id.hg_small_incorrect);
+        hg_small_correct = (ImageView) findViewById(R.id.hg_small_correct);
+        hg_medium_incorrect = (ImageView) findViewById(R.id.hg_medium_incorrect);
+        hg_medium_correct = (ImageView) findViewById(R.id.hg_medium_correct);
+        hg_large_incorrect = (ImageView) findViewById(R.id.hg_large_incorrect);
+        hg_large_correct = (ImageView) findViewById(R.id.hg_large_correct);
+
+        // make all correct/incorrect images invisible at first
+        setCorrectIncorrectToInvisible();
+
+    }
+
+    private void setCorrectIncorrectToInvisible() {
+        hg_small_incorrect.setVisibility(View.INVISIBLE);
+        hg_small_correct.setVisibility(View.INVISIBLE);
+        hg_medium_incorrect.setVisibility(View.INVISIBLE);
+        hg_medium_correct.setVisibility(View.INVISIBLE);
+        hg_large_incorrect.setVisibility(View.INVISIBLE);
+        hg_large_correct.setVisibility(View.INVISIBLE);
     }
 
     public void onClickSmall(View view) {
@@ -127,11 +154,24 @@ public class LearnActivity extends AppCompatActivity {
             learn_retry.setVisibility(View.VISIBLE);
             learn_next.setVisibility(View.VISIBLE);
 
-            // show correct sign
-
-            // if incorrect, show incorrect sign
-            if (!correct) {
-                // do something
+            if (correct) {
+                // if correct, show correct sign
+                if (guess == "SMALL") {
+                    hg_small_correct.setVisibility(View.VISIBLE);
+                } else if (guess == "MEDIUM") {
+                    hg_medium_correct.setVisibility(View.VISIBLE);
+                } else {
+                    hg_large_correct.setVisibility(View.VISIBLE);
+                }
+            } else {
+                // if incorrect, show incorrect sign
+                if (guess == "SMALL") {
+                    hg_small_incorrect.setVisibility(View.VISIBLE);
+                } else if (guess == "MEDIUM") {
+                    hg_medium_incorrect.setVisibility(View.VISIBLE);
+                } else {
+                    hg_large_incorrect.setVisibility(View.VISIBLE);
+                }
             }
 
             Log.d("answer? ", String.valueOf(correct));
@@ -153,6 +193,8 @@ public class LearnActivity extends AppCompatActivity {
 
         // SHOW: EditTexts
         showLearnHard();
+
+        setCorrectIncorrectToInvisible();
     }
 
     public void onClickRetry(View view) {
@@ -161,6 +203,7 @@ public class LearnActivity extends AppCompatActivity {
 //        setTimeTextView();
         // revert
         backToLearn();
+        setCorrectIncorrectToInvisible();
     }
 
     private void hideLearnHard() {

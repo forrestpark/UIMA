@@ -59,7 +59,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
-        android:id="@+id/three_buttons"
+        android:id="@+id/hg_layout"
         android:layout_width="0dp"
         android:layout_height="179dp"
         android:layout_marginBottom="252dp"
@@ -95,6 +95,7 @@
             android:onClick="onClickLarge"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/hourglass_large" />
+
     </LinearLayout>
 
     <Button
@@ -149,7 +150,7 @@
         android:layout_marginEnd="165dp"
         android:layout_marginBottom="12dp"
         android:text="hrs"
-        app:layout_constraintBottom_toTopOf="@+id/three_buttons"
+        app:layout_constraintBottom_toTopOf="@+id/hg_layout"
         app:layout_constraintEnd_toStartOf="@+id/learn_hard_mins_text"
         app:layout_constraintStart_toStartOf="parent"
         tools:text="hrs" />
@@ -161,7 +162,7 @@
         android:layout_marginEnd="85dp"
         android:layout_marginBottom="12dp"
         android:text="mins"
-        app:layout_constraintBottom_toTopOf="@+id/three_buttons"
+        app:layout_constraintBottom_toTopOf="@+id/hg_layout"
         app:layout_constraintEnd_toEndOf="parent"
         tools:text="mins" />
 
@@ -174,4 +175,66 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/hg_small_incorrect"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hg_layout"
+        app:srcCompat="@android:drawable/ic_delete" />
+
+    <ImageView
+        android:id="@+id/hg_small_correct"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hg_layout"
+        app:srcCompat="@android:drawable/presence_online" />
+
+    <ImageView
+        android:id="@+id/hg_medium_incorrect"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hg_layout"
+        app:srcCompat="@android:drawable/ic_delete" />
+
+    <ImageView
+        android:id="@+id/hg_medium_correct"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hg_layout"
+        app:srcCompat="@android:drawable/presence_online" />
+
+    <ImageView
+        android:id="@+id/hg_large_incorrect"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="44dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hg_layout"
+        app:srcCompat="@android:drawable/ic_delete" />
+
+    <ImageView
+        android:id="@+id/hg_large_correct"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="44dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hg_layout"
+        app:srcCompat="@android:drawable/presence_online" />
+
 </android.support.constraint.ConstraintLayout>
