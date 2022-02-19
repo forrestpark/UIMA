@@ -31,10 +31,13 @@ public class MainActivity extends AppCompatActivity {
         myPrefs = PreferenceManager.getDefaultSharedPreferences(context);
 
         peditor = myPrefs.edit();
+        clockModeIsChecked = myPrefs.getBoolean("clockModeIsChecked", true);
+        Log.d("onStart", Boolean.toString(clockModeIsChecked));
+        clockMode = (Switch) findViewById(R.id.clock_switch);
+        clockMode.setChecked(clockModeIsChecked);
         peditor.putBoolean("clockModeIsChecked", clockModeIsChecked);
         peditor.apply();
 
-        clockMode = (Switch) findViewById(R.id.clock_switch);
         clockMode.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -64,9 +67,6 @@ public class MainActivity extends AppCompatActivity {
         clockModeIsChecked = myPrefs.getBoolean("clockModeIsChecked", true);
         Log.d("onStart", Boolean.toString(clockModeIsChecked));
         clockMode.setChecked(clockModeIsChecked);
-//        numHits = myPrefs.getInt("hitsValue", 0);
-//        TextView hits = (TextView) findViewById(R.id.hits_value);
-//        hits.setText(numHits.toString());
     }
 
     @Override
@@ -79,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences.Editor peditor = myPrefs.edit();
         peditor.putBoolean("clockModeIsChecked", clockModeIsChecked);
-        // peditor.putInt("hitsValue", numHits);
         peditor.apply();
 
         super.onPause();
@@ -91,7 +90,6 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences.Editor peditor = myPrefs.edit();
         peditor.putBoolean("clockModeIsChecked", clockModeIsChecked);
-        // peditor.putInt("hitsValue", 10);
         peditor.apply();
 
         super.onStop();
@@ -99,7 +97,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        // do stuff here
         Log.d("onDestroy", "exit 3");
         super.onDestroy();
     }
@@ -127,13 +124,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void calculate(View view) {
-        // Do something in response to button
         Intent intent = new Intent(MainActivity.this, CalculateActivity.class);
         startActivity(intent);
     }
 
     public void learn(View view) {
-        // Do something in response to button
         Intent intent = new Intent(MainActivity.this, LearnActivity.class);
         startActivity(intent);
     }
