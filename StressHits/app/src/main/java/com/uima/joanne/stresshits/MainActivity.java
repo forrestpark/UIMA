@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private SharedPreferences myPrefs;
     private Switch clockMode;
     private boolean clockModeIsChecked;
+    private SharedPreferences.Editor peditor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,10 @@ public class MainActivity extends AppCompatActivity {
 
         Context context = getApplicationContext(); // app level storage
         myPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+
+        peditor = myPrefs.edit();
+        peditor.putBoolean("clockModeIsChecked", clockModeIsChecked);
+        peditor.apply();
 
         clockMode = (Switch) findViewById(R.id.clock_switch);
         clockMode.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -42,14 +47,13 @@ public class MainActivity extends AppCompatActivity {
                 }
                 clockModeIsChecked = isChecked;
                 Log.d("onCheckedChange", Boolean.toString(clockModeIsChecked));
+                peditor.putBoolean("clockModeIsChecked", clockModeIsChecked);
+                peditor.apply();
             }
         });
 
         Log.d("onCreate", "i'm creating");
 
-//        SharedPreferences.Editor peditor = myPrefs.edit();
-//        peditor.putBoolean("clockModeIsChecked", clockModeIsChecked);
-//        peditor.apply();
     }
 
     @Override

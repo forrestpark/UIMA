@@ -1,5 +1,8 @@
 package com.uima.joanne.stresshits;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -40,12 +43,20 @@ public class LearnActivity extends AppCompatActivity {
     private EditText learnhard_hrs_edittext;
     private EditText learnhard_mins_edittext;
 
+    private Context context;
+    private SharedPreferences myPrefs;
+    private boolean clockModeIsChecked;
+
     private Random rand = new Random();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_learn);
+
+        context = getApplicationContext(); // app level storage
+        myPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+        clockModeIsChecked = myPrefs.getBoolean("clockModeIsChecked", true);
 
         learnHard = false;
 
@@ -65,6 +76,7 @@ public class LearnActivity extends AppCompatActivity {
 
     public void onClickSmall(View view) {
         guess = "SMALL";
+        Log.d("current mode: ", String.valueOf(clockModeIsChecked));
     }
 
     public void onClickMedium(View view) {
@@ -225,10 +237,27 @@ public class LearnActivity extends AppCompatActivity {
 
     private void setTimeTextView() {
         TextView start_time_view = (TextView) findViewById(R.id.learn_start_time);
-        start_time_view.setText(String.format("%02d:%02d", start_hour, start_minute));
-
         TextView end_time_view = (TextView) findViewById(R.id.learn_end_time);
-        end_time_view.setText(String.format("%02d:%02d", end_hour, end_minute));
+
+        // if 24 hour mode
+        if (clockModeIsChecked) {
+            start_time_view.setText(String.format("%02d:%02d", start_hour, start_minute));
+            end_time_view.setText(String.format("%02d:%02d", end_hour, end_minute));
+        } else {
+            if (start_hour > 12) {
+                start_time_view.setText(String.format("%02d:%02d pm", start_hour % 12, start_minute));
+            } else {
+                start_time_view.setText(String.format("%02d:%02d am", start_hour, start_minute));
+            }
+
+            if (end_hour > 12) {
+                end_time_view.setText(String.format("%02d:%02d pm", end_hour % 12, end_minute));
+            } else {
+                end_time_view.setText(String.format("%02d:%02d am", end_hour, end_minute));
+            }
+        }
+
+        // if 12 hour mode
     }
 
     private int[] calculateDifference(int startHour, int startMin, int endHour, int endMin) {
