@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.uima.joanne.stresshits">
+    package="com.uima.joanne.timediff">
 
     <application
         android:allowBackup="true"
@@ -10,30 +10,30 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".LearnActivity"
+            android:name="com.uima.joanne.timediff.LearnActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName="com.uima.joanne.timediff.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.uima.joanne.timediff.MainActivity" />
         </activity>
         <activity
-            android:name=".CalculateActivity"
+            android:name="com.uima.joanne.timediff.CalculateActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName="com.uima.joanne.timediff.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.uima.joanne.timediff.MainActivity" />
         </activity>
         <activity
-            android:name=".HitsActivity"
+            android:name="com.uima.joanne.timediff.HitsActivity"
             android:label="@string/title_activity_hits"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName="com.uima.joanne.timediff.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.uima.joanne.timediff.MainActivity" />
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name="com.uima.joanne.timediff.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

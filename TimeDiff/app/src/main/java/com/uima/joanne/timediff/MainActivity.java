@@ -1,4 +1,4 @@
-package com.uima.joanne.stresshits;
+package com.uima.joanne.timediff;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,7 +12,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Switch;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 

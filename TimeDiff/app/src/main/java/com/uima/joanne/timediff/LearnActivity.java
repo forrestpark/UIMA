@@ -1,4 +1,4 @@
-package com.uima.joanne.stresshits;
+package com.uima.joanne.timediff;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -12,8 +12,6 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import java.util.Random;
 

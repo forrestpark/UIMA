@@ -1,10 +1,9 @@
-package com.uima.joanne.stresshits;
+package com.uima.joanne.timediff;
 
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.util.Pair;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;

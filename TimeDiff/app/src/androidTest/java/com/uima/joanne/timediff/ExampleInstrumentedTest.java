@@ -1,4 +1,4 @@
-package com.uima.joanne.stresshits;
+package com.uima.joanne.timediff;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

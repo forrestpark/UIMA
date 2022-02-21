@@ -1,4 +1,4 @@
-package com.uima.joanne.stresshits;
+package com.uima.joanne.timediff;
 
 import org.junit.Test;
 
