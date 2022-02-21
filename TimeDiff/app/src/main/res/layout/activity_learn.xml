@@ -8,9 +8,9 @@
 
     <TextView
         android:id="@+id/learn_start_time"
-        android:layout_width="114dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="52dp"
+        android:layout_width="96dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="48dp"
         android:layout_marginTop="64dp"
         android:textAlignment="center"
         android:textSize="24sp"
@@ -21,7 +21,7 @@
         android:id="@+id/learn_start"
         android:layout_width="64dp"
         android:layout_height="32dp"
-        android:layout_marginStart="76dp"
+        android:layout_marginStart="64dp"
         android:layout_marginTop="24dp"
         android:text="@string/start"
         android:textAlignment="center"
@@ -31,10 +31,10 @@
 
     <TextView
         android:id="@+id/learn_end_time"
-        android:layout_width="114dp"
-        android:layout_height="53dp"
+        android:layout_width="96dp"
+        android:layout_height="48dp"
         android:layout_marginTop="64dp"
-        android:layout_marginEnd="52dp"
+        android:layout_marginEnd="48dp"
         android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +45,7 @@
         android:layout_width="64dp"
         android:layout_height="32dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="76dp"
+        android:layout_marginEnd="64dp"
         android:text="@string/end"
         android:textAlignment="center"
         android:textSize="24sp"
@@ -128,9 +128,9 @@
 
     <EditText
         android:id="@+id/learnhard_hrs_edittext"
-        android:layout_width="100dp"
+        android:layout_width="96dp"
         android:layout_height="43dp"
-        android:layout_marginStart="53dp"
+        android:layout_marginStart="48dp"
         android:layout_marginBottom="10dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -139,9 +139,9 @@
 
     <EditText
         android:id="@+id/learnhard_mins_edittext"
-        android:layout_width="100dp"
-        android:layout_height="43dp"
-        android:layout_marginEnd="53dp"
+        android:layout_width="96dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="48dp"
         android:layout_marginBottom="10dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -152,24 +152,22 @@
         android:id="@+id/learn_hard_hrs_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="92dp"
-        android:layout_marginEnd="165dp"
         android:layout_marginBottom="12dp"
         android:text="hrs"
         app:layout_constraintBottom_toTopOf="@+id/hg_layout"
-        app:layout_constraintEnd_toStartOf="@+id/learn_hard_mins_text"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/learnhard_hrs_edittext"
+        app:layout_constraintStart_toStartOf="@+id/learnhard_hrs_edittext"
         tools:text="hrs" />
 
     <TextView
         android:id="@+id/learn_hard_mins_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="85dp"
         android:layout_marginBottom="12dp"
         android:text="mins"
         app:layout_constraintBottom_toTopOf="@+id/hg_layout"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/learnhard_mins_edittext"
+        app:layout_constraintStart_toStartOf="@+id/learnhard_mins_edittext"
         tools:text="mins" />
 
     <TextView
