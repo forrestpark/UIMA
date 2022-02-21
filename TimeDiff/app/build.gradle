@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "com.uima.joanne.stresshits"
+        applicationId 'com.uima.rlpwn.timediff'
         minSdkVersion 18
         targetSdkVersion 27
         versionCode 1
