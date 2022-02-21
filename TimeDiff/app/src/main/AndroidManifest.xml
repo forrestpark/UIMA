@@ -25,14 +25,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.uima.joanne.timediff.MainActivity" />
         </activity>
-        <activity
-            android:name="com.uima.joanne.timediff.HitsActivity"
-            android:label="@string/title_activity_hits"
-            android:parentActivityName="com.uima.joanne.timediff.MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.uima.joanne.timediff.MainActivity" />
-        </activity>
         <activity android:name="com.uima.joanne.timediff.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
