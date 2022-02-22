@@ -49,13 +49,33 @@ public class CalculateActivity extends AppCompatActivity {
     private boolean areLegalTimes() {
         boolean ret = true;
         EditText editStartHour = (EditText) findViewById(R.id.startHour);
-        startHour = Integer.parseInt(editStartHour.getText().toString());
+        String startHourString = editStartHour.getText().toString();
+        if (startHourString.equals("")) {
+            return false;
+        } else {
+            startHour = Integer.parseInt(editStartHour.getText().toString());
+        }
         EditText editStartMin = (EditText) findViewById(R.id.startMin);
-        startMin = Integer.parseInt(editStartMin.getText().toString());
+        String startMinString = editStartMin.getText().toString();
+        if (startMinString.equals("")) {
+            return false;
+        } else {
+            startMin = Integer.parseInt(editStartMin.getText().toString());
+        }
         EditText editEndHour = (EditText) findViewById(R.id.endHour);
-        endHour = Integer.parseInt(editEndHour.getText().toString());
+        String endHourString = editEndHour.getText().toString();
+        if (endHourString.equals("")) {
+            return false;
+        } else {
+            endHour = Integer.parseInt(editEndHour.getText().toString());
+        }
         EditText editEndMin = (EditText) findViewById(R.id.endMin);
-        endMin = Integer.parseInt(editEndMin.getText().toString());
+        String endMinString = editEndMin.getText().toString();
+        if (endMinString.equals("")) {
+            return false;
+        } else {
+            endMin = Integer.parseInt(editEndMin.getText().toString());
+        }
 
         if (!isLegalHour(startHour)) {
             editStartHour.setText(R.string.default_num);
