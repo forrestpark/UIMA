@@ -24,3 +24,7 @@ Issues
 One issue that we faced was that when testing our application on the Nexus One API 18, our app could not fit in the small screen. We tried switching to a LinearLayout in hopes that we could play with relative sizing of the objects with respect to the screen size, but we could not get it to work satisfactorily. In addition, we tried to chain objects together, but for some reason, the objects did not spawn as we expected them to; we could not give relative weights to manipulate the positions of the objects. Despite this issue with the older phone/API version, we decided to stick with our original design because it seemed to work fine with most phone models and APIs in the emulator.
 
 We failed to implement highlighting the selected hourglass image. Our team searched for help from online resources and tried adjusting attributes of the three hourglass images like the margins but ended up failing to make it work. Users are still able to see a slight color change in the boundaries of the selected image and a sound change when an image is newly selected.
+
+Partner
+
+Ray Lee -- jlee664

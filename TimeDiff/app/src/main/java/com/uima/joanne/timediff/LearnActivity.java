@@ -144,23 +144,33 @@ public class LearnActivity extends AppCompatActivity {
             // learn hard mode
             int[] hard_result = calculateDifference(start_hour, start_minute, end_hour, end_minute);
 
-            int learnhard_hrs = Integer.parseInt(learnhard_hrs_edittext.getText().toString());
-            int learnhard_mins = Integer.parseInt(learnhard_mins_edittext.getText().toString());
+            String learnhard_hrs_string = learnhard_hrs_edittext.getText().toString();
+            String learnhard_mins_string = learnhard_mins_edittext.getText().toString();
 
-            Log.d("learn hard input", String.format("%d:%d", learnhard_hrs, learnhard_mins));
-            Log.d("learn hard answer", String.format("%d:%d", hard_result[0], hard_result[1]));
+            if (learnhard_hrs_string != "" && learnhard_mins_string != "") {
 
-            // hide check button
-            learn_check.setVisibility(View.INVISIBLE);
-
-            // show learnhard_display
-            learnhard_display.setVisibility(View.VISIBLE);
+                int learnhard_hrs = Integer.parseInt(learnhard_hrs_string);
+                int learnhard_mins = Integer.parseInt(learnhard_mins_string);
 
 
-            if (hard_result[0] == learnhard_hrs && hard_result[1] == learnhard_mins) {
-                // correct
-                learnhard_display.setText("CORRECT!");
+                Log.d("learn hard input", String.format("%d:%d", learnhard_hrs, learnhard_mins));
+                Log.d("learn hard answer", String.format("%d:%d", hard_result[0], hard_result[1]));
+
+                // hide check button
+                learn_check.setVisibility(View.INVISIBLE);
+
+                // show learnhard_display
+                learnhard_display.setVisibility(View.VISIBLE);
+
+                if (hard_result[0] == learnhard_hrs && hard_result[1] == learnhard_mins) {
+                    // correct
+                    learnhard_display.setText("CORRECT!");
+                } else {
+                    learnhard_display.setText("INCORRECT");
+                }
+
             } else {
+                Log.d("learn hard","empty string given");
                 learnhard_display.setText("INCORRECT");
             }
 
