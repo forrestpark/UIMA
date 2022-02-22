@@ -26,6 +26,8 @@ public class LearnActivity extends AppCompatActivity {
 
     private String answer;
     private String guess;
+    private String learnhard_hrs_string;
+    private String learnhard_mins_string;
 
     private Button learn_check;
     private Button learn_retry;
@@ -68,6 +70,8 @@ public class LearnActivity extends AppCompatActivity {
         clockModeIsChecked = myPrefs.getBoolean("clockModeIsChecked", true);
 
         learnHard = false;
+        learnhard_hrs_string = "";
+        learnhard_mins_string = "";
 
         setRandomTime();
         setTimeTextView();
@@ -144,8 +148,15 @@ public class LearnActivity extends AppCompatActivity {
             // learn hard mode
             int[] hard_result = calculateDifference(start_hour, start_minute, end_hour, end_minute);
 
-            String learnhard_hrs_string = learnhard_hrs_edittext.getText().toString();
-            String learnhard_mins_string = learnhard_mins_edittext.getText().toString();
+            if (learnhard_hrs_edittext.getText().length() > 0) {
+                learnhard_hrs_string = learnhard_hrs_edittext.getText().toString();
+            }
+            if (learnhard_mins_edittext.getText().length() > 0) {
+                learnhard_mins_string = learnhard_mins_edittext.getText().toString();
+            }
+
+            Log.d("learnhard_hrs_string", "learnhard." + learnhard_hrs_string + ".");
+            Log.d("learnhard_mins_string", "learnhard." + learnhard_mins_string + ".");
 
             if (learnhard_hrs_string != "" && learnhard_mins_string != "") {
 
@@ -171,6 +182,11 @@ public class LearnActivity extends AppCompatActivity {
 
             } else {
                 Log.d("learn hard","empty string given");
+                // hide check button
+                learn_check.setVisibility(View.INVISIBLE);
+
+                // show learnhard_display
+                learnhard_display.setVisibility(View.VISIBLE);
                 learnhard_display.setText("INCORRECT");
             }
 
